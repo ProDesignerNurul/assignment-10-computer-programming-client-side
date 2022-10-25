@@ -13,7 +13,7 @@ const Header = () => {
             <div className='mb-4 header'>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand > <Link to='/'>Computer Programming</Link> </Navbar.Brand>
+                        <Navbar.Brand > <Link to='/'>Computer Programming Tech</Link> </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
