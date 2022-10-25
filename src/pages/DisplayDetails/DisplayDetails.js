@@ -1,12 +1,17 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import './DisplayDetails.css';
 
-const DisplayDetails = ({lang}) => {
+const DisplayDetails = ({ lang }) => {
     console.log(lang)
-    const {name, image_url} = lang;
+    const { name, details } = lang;
     return (
-        <div>
-            <h2>{name}</h2>
-            <img src={image_url} alt="" />
+        <div className='display-details'>
+            <div>
+                <h2>{name}</h2>
+                <p>{details}</p>
+                <Button variant="success">Learn More Info...</Button>
+            </div>
         </div>
     );
 };
