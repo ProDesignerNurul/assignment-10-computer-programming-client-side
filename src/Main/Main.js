@@ -1,18 +1,21 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
+import Header from '../pages/share/Header/Header';
+import LeftSideNav from '../pages/share/LeftSideNav/LeftSideNav';
 
 const Main = () => {
     return (
         <div>
+            <Header></Header>
             <Container>
                 <Row>
 
-                    <Col>
-                    <h2>left side navbar</h2>
+                    <Col lg="4">
+                    <LeftSideNav></LeftSideNav>
                     </Col>
 
-                    <Col>
+                    <Col lg="8">
                     <Outlet></Outlet>
                     </Col>
 
