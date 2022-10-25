@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,8 +7,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
+import { AuthContext } from '../../../context/AuthContext/AuthProvider';
+import { FaUser } from 'react-icons/fa';
+import { Image } from 'react-bootstrap';
 
 const Header = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .then(error => console.error(error))
+    }
+
     return (
         <div>
             <div className='mb-4 header'>
@@ -18,17 +30,36 @@ const Header = () => {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#pricing"><Link  to='/home'>Home</Link></Nav.Link>
-                                <Nav.Link href="#features"><Link  to='/courses'>Courses</Link></Nav.Link>
+                                <Nav.Link href="#pricing"><Link to='/home'>Home</Link></Nav.Link>
+                                <Nav.Link href="#features"><Link to='/courses'>Courses</Link></Nav.Link>
                                 <Nav.Link href="#features"><Link to=''>FAQ</Link></Nav.Link>
                                 <Nav.Link href="#features"><Link to=''>Blogs</Link></Nav.Link>
                                 <Nav.Link href="#features"><Link to=''>About</Link></Nav.Link>
-                                
+                                <Nav.Link href="#features"><Link to='/login'>Log In</Link></Nav.Link>
+                                <Nav.Link href="#features"><Link to='/register'>Register</Link></Nav.Link>
+
                             </Nav>
                             <Nav>
-                                <Nav.Link href="#deets"> <Link to='/login'> <Button variant="light">Log In</Button></Link> </Nav.Link>
+                                <Nav.Link href="#deets">
+                                    {
+                                        user?.uid ?
+                                            <>
+                                                <Button onClick={handleLogOut} variant="outline-secondary">Log Out</Button>
+                                            </>
+                                            :
+                                            <>
+                                                <Button variant="outline-secondary"><Link to='/login'>Log In</Link></Button>
+                                                <Button variant="outline-secondary"><Link to='/register'>Register</Link></Button>
+                                            </>
+                                    }
+                                </Nav.Link>
                                 <Nav.Link eventKey={2} href="#memes">
-                                    <Link to='/register'><Button variant="light">Register</Button></Link>
+                                    {
+                                        user?.photoURL ?
+                                            <Image title={user?.displayName} style={{ height: '35px' }} roundedCircle src={user?.photoURL}></Image>
+                                            :
+                                            <FaUser></FaUser>
+                                    }
                                 </Nav.Link>
                             </Nav>
                             <div className='d-lg-none'>
@@ -38,7 +69,7 @@ const Header = () => {
                     </Container>
                 </Navbar>
             </div>
-            
+
         </div>
     );
 };

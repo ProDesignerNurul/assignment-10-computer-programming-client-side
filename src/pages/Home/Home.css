@@ -5,6 +5,14 @@
     padding: 10px;
 }
 
+.home-details a{
+    color: white;
+    text-decoration: none;
+}
+.home-details a:hover{
+    color: yellow;
+}
+
 
 @media screen and (max-width: 900px) {
     .home-details{
