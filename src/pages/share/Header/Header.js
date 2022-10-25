@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import LeftSideNav from '../LeftSideNav/LeftSideNav';
 
 const Header = () => {
     return (
@@ -37,6 +38,9 @@ const Header = () => {
                                     <Link to='/register'><Button variant="light">Register</Button></Link>
                                 </Nav.Link>
                             </Nav>
+                            <div className='d-lg-none'>
+                                <LeftSideNav></LeftSideNav>
+                            </div>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
