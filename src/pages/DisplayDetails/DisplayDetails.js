@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 import './DisplayDetails.css';
 
 const DisplayDetails = ({ lang }) => {
+
     console.log(lang)
-    const {_id, name, details } = lang;
+    const {id, name, details } = lang;
     return (
         <div className='display-details'>
             <div>
                 <h2>{name}</h2>
                 <p>{details}</p>
-                <Button variant="success"><Link to={`/programming/${_id}`}>Learn More Info...</Link></Button>
+                <Button variant="success"><Link to={`/categories/${id}`}>Learn More Courses</Link></Button>
             </div>
         </div>
     );

@@ -3,6 +3,7 @@ import Login from "../../authentications/Login/Login";
 import Register from "../../authentications/Register/Register";
 import Main from "../../Main/Main";
 import Categories from "../../pages/Categories/Categories";
+import DisplayDetails from "../../pages/DisplayDetails/DisplayDetails";
 import Home from "../../pages/Home/Home";
 import Programming from "../../pages/Programming/Programming";
 
@@ -29,7 +30,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/programming/:id',
                 element: <Programming></Programming>,
-                loader: ({params}) => fetch(`http://localhost:5000/programming/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
                 path: '/login',
