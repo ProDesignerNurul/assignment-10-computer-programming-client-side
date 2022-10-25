@@ -10,7 +10,7 @@ const Home = () => {
 
     return (
         <div>
-            <h2>this is home : {language.length}</h2>
+            {/* <h2>this is home : {language.length}</h2> */}
             <div className='home-details'>
                 {
                     language.map( lang => <DisplayDetails
