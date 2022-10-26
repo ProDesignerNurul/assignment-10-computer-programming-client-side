@@ -4,15 +4,17 @@ import Form from 'react-bootstrap/Form';
 import './Register.css';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthContext/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 
 
 const Register = () => {
 
-    const {providerLogin, createUser} = useContext(AuthContext);
+    const {providerLogin, githubLogin, createUser} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -21,6 +23,15 @@ const Register = () => {
             console.log(user)
         })
         .catch(error => console.error(error))
+    }
+
+    const handleGithubSignIn = () => {
+        githubLogin(githubProvider)
+        .then( result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch( error => console.error(error))
     }
 
     const handleSubmit = event => {
@@ -68,6 +79,7 @@ const Register = () => {
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
+                    <p>Already have An Acoount, please <Link to='/login'>Log In</Link></p>
                     <Button variant="primary" type="submit">
                         Register
                     </Button>
@@ -77,7 +89,7 @@ const Register = () => {
                 <Button onClick={handleGoogleSignIn} className='me-3' variant="outline-warning" type="submit">
                     <FaGoogle></FaGoogle> Login With Google
                 </Button>
-                <Button variant="outline-warning" type="submit">
+                <Button onClick={handleGithubSignIn} variant="outline-warning" type="submit">
                     <FaGithub></FaGithub> Login With GitHub
                 </Button>
             </div>

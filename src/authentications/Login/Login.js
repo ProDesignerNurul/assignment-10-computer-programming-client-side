@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext/AuthProvider';
 
 const Login = () => {
@@ -44,6 +44,7 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
+                <p>if you haven't any account, please <Link to='/register'>Create An Acoount</Link></p>
                 <Button variant="primary" type="submit">
                     Log In
                 </Button>

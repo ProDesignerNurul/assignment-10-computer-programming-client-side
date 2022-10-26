@@ -10,6 +10,7 @@ import LeftSideNav from '../LeftSideNav/LeftSideNav';
 import { AuthContext } from '../../../context/AuthContext/AuthProvider';
 import { FaUser } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
+import logo from '../../../images/logo.png';
 
 const Header = () => {
 
@@ -26,7 +27,10 @@ const Header = () => {
             <div className='mb-4 header'>
                 <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                     <Container>
-                        <Navbar.Brand > <Link to='/'>Computer Programming Tech</Link> </Navbar.Brand>
+                        <Navbar.Brand >
+                            <img className='logo-img' src={logo} alt="" />
+                            <Link to='/'>Computer Programming Tech</Link>
+                        </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
@@ -53,7 +57,7 @@ const Header = () => {
                                 </Nav.Link>
                                 <Nav.Link eventKey={2} href="#memes">
                                     {
-                                        user?.photoURL ?
+                                        user?.uid ?
                                             <Image title={user?.displayName} style={{ height: '35px' }} roundedCircle src={user?.photoURL}></Image>
                                             :
                                             <FaUser></FaUser>

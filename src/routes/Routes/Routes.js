@@ -5,7 +5,6 @@ import Main from "../../Main/Main";
 import About from "../../pages/About/About";
 import Blogs from "../../pages/Blogs/Blogs";
 import Categories from "../../pages/Categories/Categories";
-import DisplayDetails from "../../pages/DisplayDetails/DisplayDetails";
 import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import MainHome from "../../pages/MainHome/MainHome";
@@ -64,6 +63,13 @@ export const routes = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             }
+            
         ]
+        
+    },
+    {
+        path: '*',
+        element: <div className="fs-2 text-center"> Wrong URL, Please Provide A valid URL!!! Thank You!!!</div>
     }
+    
 ])
