@@ -13,6 +13,8 @@ const Register = () => {
 
     const [error, setError] = useState('');
 
+    const [accepted, setAccepted] = useState(false);
+
     const {providerLogin, githubLogin, createUser} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider()
@@ -58,6 +60,10 @@ const Register = () => {
         })
     }
 
+    const handleAccepted = event => {
+        setAccepted(event.target.checked)
+    }
+
     return (
         <div>
             <div className='mb-4'>
@@ -83,10 +89,10 @@ const Register = () => {
                         <Form.Control name="password" type="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
+                        <Form.Check type="checkbox" onClick={handleAccepted} label="Check me out" />
                     </Form.Group>
                     <p>Already have An Acoount, please <Link to='/login'>Log In</Link></p>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" disabled={!accepted}>
                         Register
                     </Button>
                     <p className='text-danger mt-2'>{error}</p>

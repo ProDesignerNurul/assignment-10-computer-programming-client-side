@@ -8,6 +8,8 @@ const Login = () => {
 
     const [error, setError] = useState('');
 
+    const [accepted, setAccepted] = useState(false);
+
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
@@ -38,6 +40,10 @@ const Login = () => {
         })
     }
 
+    const handleAccepted = event => {
+        setAccepted(event.target.checked);
+    }
+
     return (
         <div>
             <Form onSubmit={handleSignIn}>
@@ -54,10 +60,10 @@ const Login = () => {
                     <Form.Control name="password" type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check type="checkbox" onClick={handleAccepted} label="Check me out" />
                 </Form.Group>
                 <p>if you haven't any account, please <Link to='/register'>Create An Acoount</Link></p>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" disabled={!accepted}>
                     Log In
                 </Button>
                 <p className='text-danger mt-2'>{error}</p>

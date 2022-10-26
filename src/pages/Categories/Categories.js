@@ -7,7 +7,7 @@ const Categories = () => {
     console.log(language)
     return (
         <div>
-            <h2>This Is CategoryWise Language : {language.length}</h2>
+            <h2 className='text-center mb-4'>Our Special Courses Below</h2>
             <div>
                 {
                     language.map(lang => <LanguageSummeryCard 
