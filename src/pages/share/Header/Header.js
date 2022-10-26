@@ -32,11 +32,9 @@ const Header = () => {
                             <Nav className="me-auto">
                                 <Nav.Link href="#pricing"><Link to='/home'>Home</Link></Nav.Link>
                                 <Nav.Link href="#features"><Link to='/courses'>Courses</Link></Nav.Link>
-                                <Nav.Link href="#features"><Link to=''>FAQ</Link></Nav.Link>
-                                <Nav.Link href="#features"><Link to=''>Blogs</Link></Nav.Link>
-                                <Nav.Link href="#features"><Link to=''>About</Link></Nav.Link>
-                                <Nav.Link href="#features"><Link to='/login'>Log In</Link></Nav.Link>
-                                <Nav.Link href="#features"><Link to='/register'>Register</Link></Nav.Link>
+                                <Nav.Link href="#features"><Link to='/faq'>FAQ</Link></Nav.Link>
+                                <Nav.Link href="#features"><Link to='/blogs'>Blogs</Link></Nav.Link>
+                                <Nav.Link href="#features"><Link to='/about'>About</Link></Nav.Link>
 
                             </Nav>
                             <Nav>
