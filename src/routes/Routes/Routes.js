@@ -8,7 +8,9 @@ import Categories from "../../pages/Categories/Categories";
 import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import MainHome from "../../pages/MainHome/MainHome";
+import PremiumCourse from "../../pages/PremiumCourse/PremiumCourse";
 import Programming from "../../pages/Programming/Programming";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -37,6 +39,10 @@ export const routes = createBrowserRouter([
                 path: '/categories/:id',
                 element: <Categories></Categories>,
                 loader: ({params}) => fetch(`https://computer-programming-server.vercel.app/category/${params.id}`)
+            },
+            {
+                path: '/premium',
+                element: <PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>
             },
             {
                 path: '/programming/:id',

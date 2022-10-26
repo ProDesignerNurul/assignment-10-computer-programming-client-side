@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Register.css';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthContext/AuthProvider';
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 
 
 
 const Register = () => {
+
+    const [error, setError] = useState('');
 
     const {providerLogin, githubLogin, createUser} = useContext(AuthContext);
 
@@ -47,9 +49,13 @@ const Register = () => {
         .then( result => {
             const user = result.user;
             console.log(user)
+            setError('');
             form.reset();
         })
-        .catch(error => console.error(error))
+        .catch(error => {
+            console.error(error)
+            setError(error.message);
+        })
     }
 
     return (
@@ -83,6 +89,7 @@ const Register = () => {
                     <Button variant="primary" type="submit">
                         Register
                     </Button>
+                    <p className='text-danger mt-2'>{error}</p>
                 </Form>
             </div>
             <div className='other-login-type'>

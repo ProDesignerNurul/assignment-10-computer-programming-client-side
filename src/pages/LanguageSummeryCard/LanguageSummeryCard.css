@@ -1,0 +1,7 @@
+.premium-btn a{
+    color: white;
+    text-decoration: none;
+}
+.premium-btn a:hover{
+    color: yellow;
+}

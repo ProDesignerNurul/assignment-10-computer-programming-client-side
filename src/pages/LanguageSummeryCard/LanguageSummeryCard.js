@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+import './LanguageSummeryCard.css';
 
 const LanguageSummeryCard = ({ lang }) => {
     const { title, image_url } = lang;
@@ -14,7 +16,7 @@ const LanguageSummeryCard = ({ lang }) => {
                     <Card.Text>
                         With supporting text below as a natural lead-in to additional content.
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button className='premium-btn' variant="primary"><Link to='/premium'>Purches Premium</Link></Button>
                 </Card.Body>
                 <Card.Footer className="text-muted">2 days ago</Card.Footer>
             </Card>
