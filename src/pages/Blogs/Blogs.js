@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 const Blogs = () => {
     return (
         <div>
-            <h2>This is blogs</h2>
+            <h2 className='mb-4 text-primary'>Most Important Article Below!!</h2>
             <div>
                 <Accordion>
                     <Accordion.Item eventKey="0">
