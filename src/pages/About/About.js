@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
 const About = () => {
+
+    const [accepted, setAccepted] = useState(false);
+
+
+    const handleAccepted = event => {
+        setAccepted(event.target.checked);
+    }
+
     return (
         <div>
             <Form>
@@ -51,10 +59,10 @@ const About = () => {
                 </Row>
 
                 <Form.Group className="mb-3" id="formGridCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check type="checkbox" onClick={handleAccepted} label="Check me out" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" disabled={!accepted}>
                     Submit
                 </Button>
             </Form>

@@ -8,6 +8,7 @@ import Categories from "../../pages/Categories/Categories";
 import FAQ from "../../pages/FAQ/FAQ";
 import Home from "../../pages/Home/Home";
 import MainHome from "../../pages/MainHome/MainHome";
+import PDF from "../../pages/PDF/PDF";
 import PremiumCourse from "../../pages/PremiumCourse/PremiumCourse";
 import Programming from "../../pages/Programming/Programming";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -60,6 +61,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/pdf',
+                element: <PDF></PDF>
             },
             {
                 path: '/login',
