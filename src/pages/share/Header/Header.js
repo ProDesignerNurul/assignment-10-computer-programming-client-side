@@ -12,6 +12,7 @@ import { FaUser } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
 import logo from '../../../images/logo.png';
 import PDF from '../../PDF/PDF';
+import DarkLightMode from '../../../DarkLightMode/DarkLightMode';
 
 
 const Header = () => {
@@ -45,10 +46,13 @@ const Header = () => {
                             </Nav>
                             <Nav>
 
+                                <div>
+                                    <DarkLightMode></DarkLightMode>
+                                </div>
 
-<div>
-    <PDF></PDF>
-</div>
+                                <div>
+                                    <PDF></PDF>
+                                </div>
 
                                 <Nav.Link href="#deets">
                                     {
