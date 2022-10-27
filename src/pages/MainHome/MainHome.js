@@ -1,10 +1,9 @@
 import React from 'react';
 import './MainHome.css';
 import Carousel from 'react-bootstrap/Carousel';
-import hero from '../../images/hero.png';
-import hero2 from '../../images/hero2.png';
-import hero3 from '../../images/hero3.png';
-
+import home1 from '../../images/home1.webp';
+import home2 from '../../images/home2.webp';
+import home3 from '../../images/home3.jpg';
 const MainHome = () => {
     return (
         <div>
@@ -12,7 +11,7 @@ const MainHome = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={hero}
+                        src={home1}
                         alt="First slide"
                     />
                     {/* <Carousel.Caption>
@@ -23,7 +22,7 @@ const MainHome = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={hero2}
+                        src={home2}
                         alt="Second slide"
                     />
 
@@ -35,7 +34,7 @@ const MainHome = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={hero3}
+                        src={home3}
                         alt="Third slide"
                     />
 

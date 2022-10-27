@@ -1,18 +1,18 @@
-* {
+/* * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-  }
+  } */
   #root {
     height: 100%;
   }
   
-  html,
+  /* html,
   body {
     min-height: 100vh;
     height: 100%;
   
-  }
+  } */
   
   span {
     font-size: 40px
@@ -32,11 +32,11 @@
     transition: background-color 0.25s ease-in-out;
   }
   
-  .container {
+  /* .container {
     display: flex;
     justify-content: center;
     align-items: center
-  }
+  } */
   
   .switch {
     position: relative;

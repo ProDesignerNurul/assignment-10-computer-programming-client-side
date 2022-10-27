@@ -5,7 +5,7 @@ const DarkLightMode = () => {
     const [darkMode, setDarkMode] = useState(false);
     return (
         <div className={ darkMode ? 'dark-mode' : 'light-mode'}>
-            <div className="constainer">
+            <div className="container">
 
                 {/* <span style={{color: 'yellow'}}>*</span> */}
 
